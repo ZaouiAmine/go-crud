@@ -1,0 +1,5 @@
+//this inits a mod so you dont have to use the go/src
+go init mod
+
+//this installs external libraries
+go get "package link"s
