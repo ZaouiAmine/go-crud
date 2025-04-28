@@ -1,0 +1,116 @@
+{
+  "info": {
+    "name": "Go CRUD API",
+    "_postman_id": "12345678-1234-1234-1234-123456789012",
+    "description": "Postman collection for the Go CRUD API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get All Movies",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/movies",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["movies"]
+        }
+      }
+    },
+    {
+      "name": "Get Movie by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/movies/:id",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["movies", ":id"],
+          "variable": [
+            {
+              "key": "id",
+              "value": "1"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Create Movie",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"isbn\": \"438-1234567895\",\n  \"title\": \"New Movie\",\n  \"director\": {\n    \"firstname\": \"New\",\n    \"lastname\": \"Director\"\n  }\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8000/movies",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["movies"]
+        }
+      }
+    },
+    {
+      "name": "Update Movie",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"isbn\": \"438-1234567896\",\n  \"title\": \"Updated Movie\",\n  \"director\": {\n    \"firstname\": \"Updated\",\n    \"lastname\": \"Director\"\n  }\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8000/movies/:id",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["movies", ":id"],
+          "variable": [
+            {
+              "key": "id",
+              "value": "1"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Delete Movie",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/movies/:id",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["movies", ":id"],
+          "variable": [
+            {
+              "key": "id",
+              "value": "1"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
